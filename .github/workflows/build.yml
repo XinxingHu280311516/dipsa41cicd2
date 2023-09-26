@@ -50,16 +50,6 @@ jobs:
                      "text": "Submission by : Xinxing Hu"
                    }
                  },
-                 {
-                   "type": "section",
-                   "block_id": "section789",
-                   "filelds": [
-                     {
-                        "type": "mrkdwn",
-                        "text": "Github URL : xxxx"
-                     }
-                   ]
-                 }
                ]
              }
          env:
