@@ -49,9 +49,10 @@ jobs:
                      "type": "mrkdwn",
                      "text": "Submission by : Xinxing Hu , github url: https://xxxx"
                    }
-                  },
-                 ]
-               }
-           env:
-             SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-             SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+                 },
+               ]
+             }
+         env:
+           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+           SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+
