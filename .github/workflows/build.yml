@@ -2,9 +2,9 @@ name: Golang web example
 on:
   push:
     branches:
-      - v1.0
+      - 'v1.0'
     tags:
-      - latest
+      - 'latest'
 jobs:
   ci:
     runs-on: ubuntu-latest
@@ -15,18 +15,18 @@ jobs:
         uses: actions/checkout@v4
       - name: Create tag
         uses: rickstaa/action-create-tag@v1
-        id: tag_create
+        id: "tag_create"
         with:
-          tag: latest
+          tag: "latest"
           force_push_tag: true
-          message: Latest release
+          message: "Latest release"
       - name: Release
         uses: ncipollo/release-action@v1
         with:
           skipIfReleaseExists: true
-          tag: latest
-          artifacts: release.tar.gz,foo/*.txt
-          bodyFile: body.md
+          tag: "latest"
+          artifacts: "release.tar.gz,foo/*.txt"
+          bodyFile: "body.md"
       - name: Install Railway
         run: npm i -g @railway/cli
       - name: Deploy
