@@ -41,15 +41,25 @@ jobs:
          with:
            payload:
              {
-               "text": "Workshop 2 - CICD -Xinxing Hu.",
+               "text": "Workshop 2 - CICD -Xinxing Hu",
                "blocks": [
                  {
                    "type": "section",
                    "text": {
                      "type": "mrkdwn",
-                     "text": "Submission by : Xinxing Hu , github url: https://xxxx"
+                     "text": "Submission by : Xinxing Hu"
                    }
                  },
+                 {
+                   "type": "section",
+                   "block_id": "section789",
+                   "filelds": [
+                     {
+                        "type": "mrkdwn",
+                        "text": "Github URL : xxxx"
+                     }
+                   ]
+                 }
                ]
              }
          env:
