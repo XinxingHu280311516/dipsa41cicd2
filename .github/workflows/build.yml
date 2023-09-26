@@ -29,9 +29,9 @@ jobs:
            artifacts: "release.tar.gz,foo/*.txt"
            bodyFile: "body.md"
 
-        - name: Install Railway
-          run: npm i -g @railway/cli      
-        - name: Deploy
-          run: railway up
-          env:
+       - name: Install Railway
+         run: npm i -g @railway/cli      
+       - name: Deploy
+         run: railway up
+         env:
             RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
