@@ -35,3 +35,23 @@ jobs:
          run: railway up
          env:
             RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+       - name: Send custom JSON date to Slack workflow
+         id: slack
+         uses: slackapi/slack-github-action@v1.24.0
+         with:
+           payload:
+             {
+               "text": "Workshop 2 - CICD -Xinxing Hu.",
+               "blocks": [
+                 {
+                   "type": "section",
+                   "text": {
+                     "type": "mrkdwn",
+                     "text": "Submission by : Xinxing Hu , github url: https://xxxx"
+                   }
+                  },
+                 ]
+               }
+           env:
+             SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+             SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
