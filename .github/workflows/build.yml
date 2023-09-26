@@ -48,7 +48,7 @@ jobs:
                     "type": "section",
                     "text": {
                       "type": "mrkdwn",
-                      "text": "*Name* XinxingHu"
+                      "text": "*Name:* \n Xinxing Hu                *Matriculation:*\n A0287432Y*Email:* \n  e1288029@u.nus.edu             *Repository:\n<https://github.com/XinxingHu280311516/dipsa41cicd2.git>*  "
                     }
                   },
                   {
@@ -57,7 +57,7 @@ jobs:
                     "fields": [
                       {
                         "type": "mrkdwn",
-                        "text": "*Deployment*"
+                        "text": "*Deployment:* \n<https://dipsa41cicd22-production.up.railway.app/>\n<https://dipsa41cicd22-production.up.railway.app/|Open Application>"
                       }
                     ]
                   }
@@ -66,4 +66,3 @@ jobs:
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
-
