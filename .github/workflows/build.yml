@@ -1,10 +1,11 @@
-name: Golang web example
+name : Golang web example
 on:
-  push:
-    branches:
-      - 'v1.0'
-    tags:
-      - 'latest'
+    push:
+        branches:
+        - 'v1.0'
+        tags:
+        - 'latest'
+
 jobs:
   ci:
     runs-on: ubuntu-latest
@@ -27,40 +28,42 @@ jobs:
           tag: "latest"
           artifacts: "release.tar.gz,foo/*.txt"
           bodyFile: "body.md"
+
       - name: Install Railway
         run: npm i -g @railway/cli
+
       - name: Deploy
         run: railway up
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
-       - name: Send custom JSON date to Slack workflow
-         id: slack
-         uses: slackapi/slack-github-action@v1.24.0
-         with:
-           payload: |
-             {
-               "text": "CICD Workshop by Xinxing Hu",
-               "blocks": [
-                 {
-                   "type": "section",
-                   "text": {
-                     "type": "mrkdwn",
-                     "text": "Name : Xinxing Hu"
-                   }
-                 },
-                 {
-                   "type": "section",
-                   "block_id": "section789",
-                   "fields": [
-                     {
-                       "type": "mrkdwn",
-                       "text": "Github URL : xxxx"
-                     }
-                   ]
+      - name: Send custom JSON data to Slack workflow
+        id: slack
+        uses: slackapi/slack-github-action@v1.24.0
+        with:
+          payload: |
+              {
+                "text": "DipSA41C CI/CD Assignment Submission",
+                "blocks": [
+                  {
+                    "type": "section",
+                    "text": {
+                      "type": "mrkdwn",
+                      "text": "*Name* XinxingHu"
+                    }
+                  },
+                  {
+                    "type": "section",
+                    "block_id": "section789",
+                    "fields": [
+                      {
+                        "type": "mrkdwn",
+                        "text": "*Deployment*"
+                      }
+                    ]
                   }
                 ]
-             }
-       env:
-         SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-         SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
+              }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK_TYPE: INCOMING_WEBHOOK
 
