@@ -42,22 +42,45 @@ jobs:
         with:
           payload: |
               {
-                "text": "DipSA41C CI/CD Assignment Submission",
                 "blocks": [
                   {
-                    "type": "section",
+                    "type": "header",
                     "text": {
-                      "type": "mrkdwn",
-                      "text": "*Name:*\nXinxing Hu\t*Matriculation:*\nA0287432Y\t*Email:*\ne1288029@u.nus.edu\t*Repository:*\n<https://github.com/XinxingHu280311516/dipsa41cicd2.git>*  "
+                      "type": "plain_text",
+                      "text": "DipSA41C CI/CD Assignment Submission",
+                      "emoji": true
                     }
                   },
                   {
+                    "type": "divider"
+                  },
+                  {
                     "type": "section",
-                    "block_id": "section789",
                     "fields": [
                       {
                         "type": "mrkdwn",
-                        "text": "*Deployment:* \n<https://dipsa41cicd22-production.up.railway.app/>\n<https://dipsa41cicd22-production.up.railway.app/|Open Application>"
+                        "text": "*Name:*\nXinxing Hu" 
+                      },
+                      {
+                        "type": "mrkdwn",
+                        "text": "\t*Metriculation:*\nA0287432Y"
+                      },
+                      {
+                        "type": "mrkdwn",
+                        "text": "*Email:*\ne1288029@u.nus.edu"
+                      },
+                      {
+                        "type": "mrkdwn",
+                        "text": "\t*Repository:*\n<https://github.com/XinxingHu280311516/dipsa41cicd2.git>"
+                      }
+                    ]   
+                  },
+                  {
+                    "type": "section",
+                    "fields": [
+                      {
+                        "type": "mrkdwn",
+                        "text": "*Deployment:* \n<https://dipsa41cicd22-production.up.railway.app/>\n\n<https://dipsa41cicd22-production.up.railway.app/|Open Application>"
                       }
                     ]
                   }
